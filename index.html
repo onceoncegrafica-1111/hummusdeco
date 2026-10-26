@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Hummus home&amp;deco | Cortinas y Textiles a Medida</title>
+    <meta name="description" content="Cortinas, fundas y textiles a medida para tu hogar. Medición y asesoramiento a domicilio. Showroom en Zona Norte.">
+
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="https://dcdn-us.mitiendanube.com/stores/001/334/823/themes/common/logo-1495481523728085744-1785169208-64592e7d080ab0e84f395435307f03a51785169208.ico?0" type="image/x-icon">
+
+    <!-- TIPOGRAFÍAS: NUNITO (OFICIAL DE SU WEB) + CORMORANT GARAMOND (EDITORIAL) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. SISTEMA CROMÁTICO OFICIAL HUMMUS HOME & DECO
+           ========================================================================== */
+        :root {
+            /* AMBIENTE 1: TUSSOR TOSTADO & CRUDO (Identidad principal) */
+            --bg-body: #FAF7F2;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F3EDE5;
+            --color-wood: #A9836C;            /* Tostado lino oficial */
+            --color-wood-dark: #5C4535;       /* Tierra profundo */
+            --color-wood-soft: #C4A48F;       /* Tussor suave */
+            --color-wood-glow: rgba(169, 131, 108, 0.22);
+            --color-slate: #5A6C78;           /* Pizarra oficial */
+            --color-text-title: #2B2927;
+            --color-text-body: #4A4643;
+            --color-text-muted: #7E7670;
+            --color-border: #E8DFD5;
+            --color-border-hover: #A9836C;
+            --badge-bg: #F5EFEB;
+            --badge-text: #5C4535;
+
+            /* TRAMA DIAGONAL DE TEJIDO EN BAJORRELIEVE (MARRÓN DEFINIDO) */
+            --pattern-line: rgba(138, 92, 59, 0.22);
+            --pattern-highlight: rgba(255, 255, 255, 0.95);
+            --grain-opacity: 0.085;
+
+            --shadow-card: 0 10px 26px -6px rgba(90, 108, 120, 0.07), 0 2px 6px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 16px 36px -8px rgba(169, 131, 108, 0.20), 0 4px 12px rgba(0, 0, 0, 0.04);
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Nunito', -apple-system, sans-serif;
+            --spring: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* AMBIENTE 2: PIZARRA & CEMENTO */
+        body[data-palette="pizarra"] {
+            --bg-body: #F4F6F7;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #E7ECEF;
+            --color-wood: #5A6C78;
+            --color-wood-dark: #374650;
+            --color-wood-soft: #8595A0;
+            --color-wood-glow: rgba(90, 108, 120, 0.22);
+            --color-slate: #374650;
+            --color-text-title: #20262B;
+            --color-text-body: #414B52;
+            --color-text-muted: #6E7C85;
+            --color-border: #D5DDE2;
+            --color-border-hover: #5A6C78;
+            --badge-bg: #EAEFF2;
+            --badge-text: #374650;
+            --pattern-line: rgba(90, 108, 120, 0.22);
+        }
+
+        /* AMBIENTE 3: LINO OLIVA & CRUDO */
+        body[data-palette="oliva"] {
+            --bg-body: #F5F4EE;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #E8E6DB;
+            --color-wood: #867B5F;
+            --color-wood-dark: #4A4432;
+            --color-wood-soft: #A3997C;
+            --color-wood-glow: rgba(134, 123, 95, 0.22);
+            --color-slate: #4A4432;
+            --color-text-title: #222019;
+            --color-text-body: #454238;
+            --color-text-muted: #7A7566;
+            --color-border: #DDD9CB;
+            --color-border-hover: #867B5F;
+            --badge-bg: #ECE9DC;
+            --badge-text: #4A4432;
+            --pattern-line: rgba(134, 123, 95, 0.22);
+        }
+
+        /* ==========================================================================
+           2. BASE Y ESTRUCTURA
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: var(--bg-body);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--color-text-body);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 14px 14px 64px;
+            overflow-x: hidden;
+            position: relative;
+            letter-spacing: -0.01em;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        /* TRAMA DIAGONAL TEXTIL (LÍNEA MARRÓN CÁLIDA Y MÁS VISIBLE) */
+        .decor-wallpaper-relief {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            background-image: 
+                linear-gradient(45deg, transparent 48%, var(--pattern-highlight) 49.5%, transparent 51%),
+                linear-gradient(-45deg, transparent 48%, var(--pattern-highlight) 49.5%, transparent 51%),
+                linear-gradient(45deg, transparent 48.5%, var(--pattern-line) 50%, transparent 51.5%),
+                linear-gradient(-45deg, transparent 48.5%, var(--pattern-line) 50%, transparent 51.5%);
+            background-size: 36px 36px;
+            background-position: 0 1px, 0 1px, 0 0, 0 0;
+        }
+
+        /* GRANO TEXTIL / TUSSOR */
+        .decor-cotton-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            opacity: var(--grain-opacity);
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='cottonGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23cottonGrain)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        .decor-ambient-light {
+            position: fixed;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 760px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(235, 222, 207, 0.45) 0%, rgba(250, 247, 242, 0) 70%);
+            pointer-events: none;
+            z-index: 3;
+            filter: blur(50px);
+        }
+
+        .hub-container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           MARQUESINA PROMO OFICIAL CON SCROLL CONTINUO HACIA LA IZQUIERDA
+           ========================================================================== */
+        .official-promo-marquee {
+            width: 100%;
+            background: var(--color-wood);
+            color: #FFFFFF;
+            font-size: 0.70rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 8px 0;
+            border-radius: 999px;
+            box-shadow: 0 4px 14px var(--color-wood-glow);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 22s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-track span {
+            display: inline-block;
+            padding-right: 42px;
+            white-space: nowrap;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SELECTOR DE AMBIENTE */
+        .ambience-dock {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            height: 38px;
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .ambience-dock-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-wood);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ambience-dock-label svg {
+            width: 13px;
+            height: 13px;
+            stroke-width: 2.2;
+        }
+
+        .ambience-swatches {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .ambience-tab {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0,0,0,0.15);
+            outline: none;
+            cursor: pointer;
+            transition: transform 0.25s var(--spring);
+        }
+
+        .ambience-tab.active {
+            transform: scale(1.22);
+            border-color: var(--color-text-title);
+            box-shadow: 0 0 0 2px var(--bg-surface), 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        .tab-tostado { background: #A9836C; }
+        .tab-pizarra { background: #5A6C78; }
+        .tab-oliva   { background: #867B5F; }
+
+        /* ==========================================================================
+           3. MONUMENTO DE MARCA: LOGO OFICIAL CON COLOR HEX #608080
+           ========================================================================== */
+        .brand-monument {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 8px 6px 0;
+            gap: 12px;
+        }
+
+        .logo-monument-wrapper {
+            width: 100%;
+            max-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .hummus-official-svg {
+            width: 100%;
+            height: auto;
+            max-height: 110px;
+            color: #608080;
+            filter: drop-shadow(0 2px 4px rgba(96, 128, 128, 0.12));
+            transition: transform 0.35s var(--spring);
+        }
+
+        .hummus-official-svg .cls-1 {
+            fill: #608080 !important;
+        }
+
+        .logo-monument-wrapper:hover .hummus-official-svg {
+            transform: scale(1.025);
+        }
+
+        .hummus-glass-reflection {
+            width: 100%;
+            height: 20px;
+            margin-top: 2px;
+            opacity: 0.18;
+            transform: scaleY(-0.7);
+            filter: blur(0.7px);
+            mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            pointer-events: none;
+            color: #608080;
+        }
+
+        .hummus-glass-reflection .cls-1 {
+            fill: #608080 !important;
+        }
+
+        .brand-sub-tag {
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-wood);
+        }
+
+        /* MANIFIESTO TEXTUAL REAL */
+        .brand-manifesto-capsule {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 18px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow-card);
+            width: 100%;
+        }
+
+        .manifesto-quote-text {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--color-text-title);
+            line-height: 1.35;
+        }
+
+        .manifesto-sub-desc {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            margin-top: 6px;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        /* PILARES REALES DE LA MARCA (INSTAGRAM / WEB) */
+        .studio-pillars-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .pillar-chip {
+            font-size: 0.70rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--color-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            animation: subtleFloating 4.5s ease-in-out infinite alternate;
+        }
+
+        .pillar-chip:nth-child(1) { animation-delay: 0s; }
+        .pillar-chip:nth-child(2) { animation-delay: 0.8s; }
+        .pillar-chip:nth-child(3) { animation-delay: 1.6s; }
+        .pillar-chip:nth-child(4) { animation-delay: 2.4s; }
+
+        @keyframes subtleFloating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+            100% { transform: translateY(0px); }
+        }
+
+        .pillar-svg {
+            width: 13px;
+            height: 13px;
+            stroke-width: 2.2;
+            fill: none;
+            stroke: currentColor;
+        }
+
+        /* ==========================================================================
+           4. HERO CTA: WHATSAPP DIRECTO AL TALLER & ASESORAMIENTO
+           ========================================================================== */
+        .card-hero-custom-furniture {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 22px;
+            background: linear-gradient(135deg, var(--color-wood) 0%, var(--color-wood-dark) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #FFFFFF;
+            box-shadow: 0 14px 34px -6px var(--color-wood-glow);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.28s var(--spring);
+            cursor: pointer;
+        }
+
+        .card-hero-custom-furniture::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+            transform: skewX(-25deg);
+            animation: lightSweep 5.5s infinite ease-in-out;
+        }
+
+        @keyframes lightSweep {
+            0%, 60% { left: -120%; }
+            85%, 100% { left: 180%; }
+        }
+
+        .card-hero-custom-furniture:hover {
+            transform: translateY(-3px) scale(1.015);
+        }
+
+        .hero-custom-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #F6EDE6;
+        }
+
+        .hero-live-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #25D366;
+            box-shadow: 0 0 8px #25D366;
+        }
+
+        .hero-main-title {
+            font-family: var(--font-serif);
+            font-size: 1.60rem;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-sub-detail {
+            font-size: 0.80rem;
+            color: #F8F2ED;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .hero-action-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            color: var(--color-wood);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-hero-custom-furniture:hover .hero-action-circle {
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        .hero-action-circle svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2.2;
+        }
+
+        /* ==========================================================================
+           5. BENTO GRID DE NAVEGACIÓN
+           ========================================================================== */
+        .bento-actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .bento-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 18px;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--color-text-title);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 118px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.26s var(--spring);
+            position: relative;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-border-hover);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .bento-card.full-width {
+            grid-column: span 2;
+            flex-direction: row;
+            align-items: center;
+            min-height: auto;
+            padding: 18px 20px;
+            border-left: 4px solid var(--color-wood);
+        }
+
+        .bento-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .bento-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--bg-surface-elevated);
+            color: var(--color-wood);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.22s ease;
+        }
+
+        .bento-card:hover .bento-icon-box {
+            background: var(--color-wood);
+            color: #FFFFFF;
+        }
+
+        .bento-icon-box svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
+        }
+
+        .bento-arrow-hint {
+            font-size: 15px;
+            color: var(--color-text-muted);
+            opacity: 0.5;
+            transition: transform 0.22s ease, opacity 0.22s ease, color 0.22s ease;
+        }
+
+        .bento-card:hover .bento-arrow-hint {
+            opacity: 1;
+            transform: translate(2px, -2px);
+            color: var(--color-wood);
+        }
+
+        .bento-title {
+            font-size: 0.96rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--color-text-title);
+            margin-bottom: 2px;
+        }
+
+        .bento-caption {
+            font-size: 0.76rem;
+            color: var(--color-text-muted);
+            line-height: 1.35;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           6. CARROUSEL EDITORIAL DE PRODUCTOS REALES (TIENDANUBE)
+           ========================================================================== */
+        .showcase-wrapper {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 22px;
+            padding: 18px 16px 20px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .showcase-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 4px;
+        }
+
+        .showcase-title-serif {
+            font-family: var(--font-serif);
+            font-size: 1.40rem;
+            font-weight: 600;
+            color: var(--color-text-title);
+            line-height: 1.1;
+        }
+
+        .showcase-link-more {
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-wood);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .showcase-strip-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 4px 2px 10px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .showcase-strip-scroll::-webkit-scrollbar { display: none; }
+
+        .product-decor-card {
+            flex: 0 0 178px;
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--color-text-title);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            transition: transform 0.25s var(--spring), box-shadow 0.25s ease;
+        }
+
+        .product-decor-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-border-hover);
+        }
+
+        .decor-img-container {
+            width: 100%;
+            height: 144px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #F7F5F1;
+            position: relative;
+        }
+
+        .decor-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-decor-card:hover .decor-img-container img {
+            transform: scale(1.06);
+        }
+
+        .decor-tag-badge {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
+            color: var(--color-wood-dark);
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .decor-meta-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .decor-item-title {
+            font-size: 0.84rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-text-title);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 34px;
+        }
+
+        .decor-item-price {
+            font-size: 0.94rem;
+            font-weight: 800;
+            color: var(--color-text-title);
+            margin-top: 2px;
+        }
+
+        .decor-item-transfer {
+            font-size: 0.70rem;
+            color: var(--color-wood);
+            font-weight: 800;
+        }
+
+        .decor-item-transfer span {
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+
+        /* ==========================================================================
+           7. SHOWROOM & TALLER: GOOGLE MAPS EMBED EXACTO
+           ========================================================================== */
+        .atelier-map-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 22px;
+            padding: 16px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .atelier-map-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .atelier-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .atelier-pin-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--bg-surface-elevated);
+            color: var(--color-wood);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .atelier-pin-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2.2;
+        }
+
+        .atelier-header-texts {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .atelier-name {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-title);
+        }
+
+        .atelier-address-sub {
+            font-size: 0.76rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+        }
+
+        .atelier-map-frame {
+            width: 100%;
+            height: 240px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background: #EAE6DF;
+        }
+
+        .atelier-map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .atelier-open-directions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-surface-elevated);
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--color-text-title);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .atelier-open-directions:hover {
+            background-color: var(--color-border);
+        }
+
+        /* ==========================================================================
+           8. REDES Y CONTACTO DIRECTO
+           ========================================================================== */
+        .social-network-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-pill-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-wood);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.22s var(--spring);
+        }
+
+        .social-pill-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            background: var(--color-wood);
+            color: #FFFFFF;
+            border-color: var(--color-wood);
+        }
+
+        .social-pill-btn svg {
+            width: 19px;
+            height: 19px;
+            fill: currentColor;
+        }
+
+        /* ==========================================================================
+           9. BOTÓN FLOTANTE WHATSAPP
+           ========================================================================== */
+        .floating-whatsapp-wrap {
+            position: fixed;
+            bottom: 22px;
+            right: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .floating-whatsapp-pill-label {
+            background: #FFFFFF;
+            color: #128C7E;
+            font-size: 0.74rem;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 999px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            border: 1px solid rgba(37, 211, 102, 0.35);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .floating-whatsapp-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
+            transition: transform 0.25s var(--spring);
+        }
+
+        .floating-whatsapp-wrap:hover .floating-whatsapp-btn {
+            transform: scale(1.08) translateY(-2px);
+        }
+
+        .floating-whatsapp-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        /* ==========================================================================
+           10. FOOTER EDITORIAL Y LEGAL
+           ========================================================================== */
+        .hub-colophon {
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+        }
+
+        .colophon-signature {
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-title);
+        }
+
+        .colophon-atelier-text {
+            font-size: 0.76rem;
+            color: var(--color-text-muted);
+            max-width: 370px;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        .colophon-links-legal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.70rem;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        .colophon-links-legal a {
+            color: var(--color-wood);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .colophon-copy {
+            font-size: 0.66rem;
+            color: var(--color-text-muted);
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body data-palette="tostado">
+
+    <!-- TEXTURAS VISUALES: TRAMA MARRÓN MÁS DEFINIDA -->
+    <div class="decor-wallpaper-relief" aria-hidden="true"></div>
+    <div class="decor-cotton-grain" aria-hidden="true"></div>
+    <div class="decor-ambient-light" aria-hidden="true"></div>
+
+    <!-- CONTENEDOR CENTRAL -->
+    <main class="hub-container">
+
+        <!-- MARQUESINA OFICIAL: BARRA ESTÁTICA CON MOVIMIENTO CONTINUO HACIA LA IZQUIERDA -->
+        <div class="official-promo-marquee" aria-label="Promociones">
+            <div class="marquee-track">
+                <span>· 25% OFF EN TRANSFERENCIA · 3 CUOTAS SIN INTERÉS · ENVÍOS A TODO EL PAÍS ·</span>
+                <span>· 25% OFF EN TRANSFERENCIA · 3 CUOTAS SIN INTERÉS · ENVÍOS A TODO EL PAÍS ·</span>
+            </div>
+        </div>
+
+        <!-- 1. SELECTOR DE TONOS TEXTILES -->
+        <nav class="ambience-dock" aria-label="Selector de Paleta Textil">
+            <span class="ambience-dock-label" id="ambienceActiveLabel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                Tussor &amp; Tostado
+            </span>
+            <div class="ambience-swatches">
+                <button class="ambience-tab tab-tostado active" data-target="tostado" title="Tussor Tostado &amp; Crudo" onclick="setDecorAmbience('tostado', 'Tussor & Tostado')"></button>
+                <button class="ambience-tab tab-pizarra" data-target="pizarra" title="Gris Pizarra &amp; Cemento" onclick="setDecorAmbience('pizarra', 'Pizarra & Cemento')"></button>
+                <button class="ambience-tab tab-oliva" data-target="oliva" title="Lino Oliva &amp; Crudo" onclick="setDecorAmbience('oliva', 'Lino Oliva & Crudo')"></button>
+            </div>
+        </nav>
+
+        <!-- 2. MONUMENTO DE MARCA: LOGO OFICIAL VECTORIAL EN COLOR #608080 -->
+        <header class="brand-monument">
+            <div class="logo-monument-wrapper" title="Hummus home &amp; deco">
+                <!-- VECTOR ORIGINAL OFICIAL DE HUMMUS HOME&DECO EN HEX #608080 -->
+                <svg class="hummus-official-svg" viewBox="0 0 915.52 655.51" xmlns="http://www.w3.org/2000/svg">
+                    <path class="cls-1" d="M453.26,0c58.78,49.54,116.82,98.45,175.36,147.79-2.76,2.39-4.85,4.2-7.45,6.45-6.66-5.6-13.64-11.46-20.59-17.34-48.08-40.65-96.18-81.27-144.16-122.03-3.08-2.62-4.8-1.39-7.13.53-27.73,22.92-55.51,45.78-83.24,68.7-26.71,22.07-53.37,44.19-80.06,66.27-1.01.84-2.1,1.58-3.36,2.53-1.9-1.81-3.68-3.51-6.37-6.06C335.28,97.88,394.01,49.15,453.26,0Z"/>
+                    <g>
+                        <path class="cls-1" d="M261.81,459.1c1.43-5.89,2.63-11.03,3.93-16.15,17.2-67.82,34.39-135.64,51.7-203.43.49-1.92,1.85-4.45,3.45-5.09,3.23-1.3,4.8.74,5.72,4.11,7.8,28.61,15.84,57.15,23.73,85.73,3.99,14.45,7.84,28.94,11.77,43.41.38,1.41.88,2.79,1.71,5.43,2.54-9.72,4.73-18.22,6.98-26.7,9.47-35.74,18.94-71.48,28.48-107.2.44-1.66,1.15-4.07,2.34-4.53,2.7-1.03,5.06-.83,6.12,3.25,10,38.7,20.21,77.35,30.46,115.98,8.79,33.16,17.7,66.29,26.54,99.43.42,1.57.67,3.18,1.19,5.65-8.38,0-16.29.14-24.19-.18-.97-.04-2.3-2.49-2.68-4.01-7.09-28.45-14.05-56.92-21.06-85.39-4.77-19.37-9.57-38.74-14.68-59.45-.88,2.29-1.42,3.35-1.7,4.48-11.78,46.68-23.54,93.36-35.32,140.04-.53,2.11-.26,4.73-3.87,4.7-3.68-.04-3.24-2.82-3.73-4.85-11.11-45.97-22.17-91.96-33.24-137.95-.53-2.21-1.14-4.4-2.87-6.71-.55,2.1-1.11,4.2-1.65,6.31-11.89,46.12-23.83,92.23-35.57,138.39-.98,3.86-2.63,5.05-6.48,4.81-5.43-.34-10.89-.09-17.08-.09Z"/>
+                        <path class="cls-1" d="M527.65,309.68c-12.52,49.66-25.05,99.32-37.6,149.08h-22.31c2.54-10.48,4.91-20.47,7.39-30.44,15.66-62.89,31.33-125.78,47.05-188.66.46-1.82,1.17-4.46,2.48-5,2.93-1.22,5.44-.68,6.58,3.44,11.96,43.19,24.12,86.32,36.24,129.47.48,1.7,1.02,3.38,2.47,5.09,1.88-7.14,3.8-14.26,5.64-21.41,9.56-37.09,19.1-74.19,28.68-111.28.45-1.74.81-3.76,1.92-5.03,1.86-2.13,6.09-.55,6.89,2.44,19.3,72.08,38.58,144.16,57.84,216.25.42,1.56.56,3.19.93,5.36-8.24,0-16.04.2-23.8-.22-1.14-.06-2.61-3-3.08-4.83-5.95-23.41-11.73-46.85-17.58-70.28-5.65-22.63-11.32-45.25-16.99-67.87-.4-1.59-.9-3.15-1.75-6.11-.83,2.63-1.33,3.94-1.66,5.29-11.39,46.61-22.75,93.22-34.23,139.8-.4,1.61-1.73,3.74-3.11,4.21-3.2,1.09-3.67-1.77-4.23-4.05-4.72-19.08-9.37-38.18-14.16-57.24-7.06-28.11-14.22-56.19-21.35-84.28-.32-1.26-.77-2.49-1.16-3.73-.36,0-.72-.01-1.08-.02Z"/>
+                        <path class="cls-1" d="M77.97,459.08v-134.03H23.97v133.62H0v-224.11h24c0,2.24,0,4.33,0,6.43,0,18.16.07,36.32-.08,54.48-.03,3.49.6,5.07,4.6,5,14.99-.26,29.99-.26,44.98-.12,3.6.03,4.49-1.3,4.46-4.66-.14-15.99-.09-31.99-.1-47.98,0-4.15,0-8.3,0-13.38,7.67,0,14.91-.12,22.14.2.7.03,1.81,2.79,1.82,4.28.12,14.83.04,29.66.04,44.49,0,55.82.03,111.63,0,167.45,0,9.87.68,8.2-8.18,8.35-4.97.08-9.93.01-15.72.01Z"/>
+                        <path class="cls-1" d="M685.12,234.25c7.69,0,14.51-.15,21.3.16.98.04,2.58,2.22,2.66,3.49.32,4.81.15,9.66.15,14.49,0,48.16-.13,96.33.15,144.49.04,6.86.9,14.18,3.45,20.45,5.59,13.77,20.39,21.35,35.03,19.39,15.8-2.11,27.56-13.3,30.19-29.01.63-3.76.82-7.62.82-11.44.08-51.66.09-103.32.12-154.99,0-2.12,0-4.25,0-6.71h24.02c.1,1.69.28,3.43.29,5.18.04,53,.23,105.99.02,158.99-.09,22.36-8.37,40.92-27.69,53.51-28.79,18.75-79.73,9.61-88.8-37-.89-4.56-1.61-9.24-1.62-13.86-.12-53.83-.08-107.66-.09-161.48,0-1.63,0-3.26,0-5.66Z"/>
+                        <path class="cls-1" d="M226.08,234.55h23.6c.1,1.9.27,3.68.27,5.45.02,53.48.32,106.96-.1,160.43-.17,21.29-8.4,39.34-26.54,51.65-20.07,13.61-47.83,11.04-65.61-5.46-13.68-12.7-19.94-28.66-20.03-46.87-.26-53.48-.05-106.95-.16-160.43,0-3.85.95-5.4,5-5.13,4.81.32,9.68.33,14.48-.03,4.13-.31,5.09,1.35,4.99,5.15-.22,8.82-.05,17.66-.05,26.49,0,44.15-.18,88.3.22,132.44.06,6.76,1.73,13.99,4.54,20.14,5.14,11.26,14.54,17.92,27.26,17.8,13.37-.12,22.7-7.58,27.96-19.32,2.57-5.74,3.94-12.51,3.98-18.82.31-50.14.17-100.29.17-150.43,0-4.15,0-8.29,0-13.06Z"/>
+                        <path class="cls-1" d="M824.57,424.87c8.25,4.01,15.33,8.83,23.14,11.01,26.44,7.39,49.07-15.74,41.13-42.08-2.64-8.77-7.22-17.19-12.14-24.99-8.79-13.94-18.58-27.25-27.81-40.91-8.31-12.3-16.57-24.66-19.12-39.75-3.64-21.59,5.51-42.08,22.65-50.76,19.33-9.79,42.46-5.73,57.86,10.17.22.22.29.59.64,1.33-4.43,5.49-9,11.15-13.83,17.13-2.31-1.58-4.31-3.33-6.62-4.45-3.86-1.88-7.78-4.01-11.92-4.91-14.5-3.16-26.48,6.56-25.41,21.33.47,6.54,2.66,13.6,6.09,19.17,12.84,20.83,26.65,41.07,39.85,61.68,7.32,11.43,12.84,23.6,14.73,37.34,3.95,28.63-14.18,57.33-40.69,63.58-20.4,4.81-38.58-.36-55.02-12.72-1.04-.78-2.14-2.97-1.76-3.91,2.64-6.43,5.66-12.69,8.21-18.24Z"/>
+                        <path class="cls-1" d="M472.14,640.06c-4.45,6.84-10.53,11.42-18.5,13.42-11.89,2.98-25.33-2.2-31.9-12.43-6.87-10.69-5.97-23.14,2.57-33.34,3.95-4.72,8.13-9.23,12.6-14.28-1.63-2.48-4.19-5.96-6.31-9.68-8.77-15.39-2.09-31.07,14.74-34.85,9.94-2.23,19.71,1.33,24.18,8.83,4.64,7.78,3.41,18.45-3.47,25.95-3.91,4.27-8.43,7.99-12.85,12.12,5.56,7.1,11.06,14.11,16.94,21.61,1.99-4.31,3.54-8.12,5.46-11.74,3.31-6.23,7.82-11.31,15.08-12.84,1.94-.41,5.62-.25,5.91.57,1.12,3.12,2.31,6.86-1.5,9.4-2.47,1.65-5.74,2.66-7.36,4.89-2.79,3.84-4.37,8.55-6.85,12.65-3.41,5.65-2.3,10.18,2.48,14.35,2.12,1.85,3.74,4.29,5.9,6.09,1.3,1.08,3.31,2.25,4.78,2.01,4.49-.74,4.83,1.81,5.36,5.12.65,4.03.87,7.79-4.45,7.58-3.26-.13-7.03-1.04-9.57-2.94-4.62-3.46-8.5-7.91-13.25-12.49ZM444.63,603.07c-5.63,4.43-10.41,9.13-13.01,15.65-3.57,8.95.59,18.96,9.44,22.85,8.02,3.52,18.91-.92,22.57-9.43.51-1.18.13-3.29-.66-4.38-5.91-8.2-12.03-16.26-18.34-24.7ZM446.59,588.23c4.41-4.69,8.34-8.25,11.5-12.41,3.21-4.23,2.81-10.35-.05-13.46-2.91-3.16-9.37-3.7-13.93-1.17-4.33,2.41-6.75,7.42-4.93,12.33,1.75,4.73,4.53,9.08,7.42,14.71Z"/>
+                        <path class="cls-1" d="M37.51,497.39c-2.34,12.47-4.43,25-7.09,37.4-4.47,20.84-9.31,41.6-13.97,62.4-.25,1.1-.21,2.26-.28,2.98,9.17-7.08,18.44-14.23,27.17-20.96,8.16,2.88,10.31,8.33,9.86,15-.74,10.96-1.72,21.9-2.79,32.84-.41,4.18-3.53,5.99-9.03,5.23-3.81-.52-3.32-3.72-3.01-6.29,1.03-8.43,2.3-16.83,3.38-25.25.35-2.73.4-5.49.58-8.24-.52-.37-1.04-.74-1.56-1.1-4.55,4.39-9.86,8.24-13.48,13.3-5.2,7.27-9.07,15.47-13.71,23.15-1.98,3.28-4.49,6.23-6.75,9.32-5.98-4.53-6.87-9.42-5.47-15.56,7.36-32.31,14.27-64.73,21.79-97,1.89-8.11,5.31-15.88,8.34-23.69.67-1.72,2.66-2.94,4.05-4.38.65.29,1.31.58,1.96.86Z"/>
+                        <path class="cls-1" d="M615.33,617.9c-3.09,2.3-6.19,4.77-9.45,7-3.66,2.5-7.59,4.66-12.02,1.86-4.56-2.89-6.99-7.27-6.73-12.63.17-3.61.93-7.3,2.06-10.75,3.31-10.08,7.93-19.46,16.33-26.42,6.38-5.29,13.55-7.59,22.4-5.22,3.13-8.45,6.31-16.97,9.43-25.52,2.91-7.98,5.45-16.12,8.74-23.93,1.29-3.07,4.19-5.46,6.34-8.14,5.38,3.89,5.78,7.65,3.87,12.53-7.77,19.84-15.68,39.65-22.7,59.76-4.6,13.18-8.18,26.79-7.17,41.06.21,3.02-1.09,4.74-4.07,5.22-2.91.47-5.73.07-6.31-3.23-.64-3.69-.49-7.52-.71-11.6ZM599.15,617.18c.92-.38,1.6-.52,2.12-.89,11.29-8.05,18.2-19.23,22.59-32.1,1.01-2.97-1.7-4.9-5.28-4.09-11.44,2.59-23.56,25.22-19.43,37.07Z"/>
+                        <path class="cls-1" d="M194.73,608.34c-4.88,5.09-7.97,10.41-7.82,16.79.14,5.8-2.94,9.54-7.07,14.58-2.05-3.88-4.46-6.94-5.33-10.39-2.17-8.53-4.3-17.18-5.14-25.91-.54-5.58,1.06-11.41,2.15-17.04.23-1.2,2.71-3.05,3.58-2.78,1.35.42,2.93,2.31,3.14,3.76.64,4.41.6,8.92.98,13.38.2,2.4.7,4.77,1.13,7.6,13.62-16.01,18.93-11.74,26.42-3.39,3.9-3.31,7.83-6.57,11.69-9.91,2.26-1.96,4.26-1.27,6.8-.24,9.71,3.95,13.36,11.25,13,21.3-.14,3.98.65,7.99.43,11.95-.16,3-1.25,5.96-1.94,9-9.77-3.36-11.69-6.55-10.84-15.7.36-3.93.45-8.02-.23-11.89-.81-4.63-3.11-5.24-6.46-2.08-5.26,4.95-9.57,10.21-6.22,18.33,1.32,3.19-2.72,9.7-5.97,10.34-.86.17-2.54-.52-2.83-1.23-1.44-3.59-3.29-7.26-3.59-11.01-.45-5.7-2.23-10.49-5.87-15.44Z"/>
+                        <path class="cls-1" d="M695.9,600.99c-.42-.2-1.35-.37-1.82-.93-1.38-1.65-2.57-3.46-3.84-5.2,1.9-1.27,3.75-3.52,5.69-3.59,3.31-.13,4.72-1.69,6.71-3.97,5.85-6.72,11.81-13.5,18.63-19.16,3.27-2.72,8.53-3.94,12.97-4.17,8.64-.43,12.74,6.33,8.97,14.16-4.05,8.43-10.69,14.41-19.28,18-4.12,1.73-8.46,3.14-12.84,3.99-3.26.63-4.68,2.22-4.92,5.18-.35,4.45-.92,8.94-.7,13.38.22,4.33,3.19,6.86,7.48,6.05,4.68-.88,9.2-2.62,13.74-4.14,2.98-1,5.81-2.8,8.84-3.22,1.65-.23,3.85,1.41,5.26,2.77.44.43-.55,2.99-1.47,4.07-7.66,8.99-18.04,11.69-29.18,11.31-9.43-.31-14.9-6.19-15.24-15.82-.22-6.11.62-12.25,1-18.72ZM712.9,589.42c9.27-2.32,16.88-6.74,20.72-16.02-9.65,1.72-15.81,8.05-20.72,16.02Z"/>
+                        <path class="cls-1" d="M278.74,600.88c-.61-.25-1.79-.37-2.34-1.03-1.25-1.5-3.25-3.47-2.98-4.86.3-1.51,2.87-3.7,4.37-3.63,4.4.2,6.41-2.01,8.49-5.38,4.95-8.02,11.09-15.07,19.68-19.33,3.18-1.58,6.92-2.63,10.45-2.77,8.46-.34,12.63,5.83,9.27,13.6-3.81,8.8-10.62,14.84-19.36,18.51-4.27,1.79-8.94,2.6-13.27,4.26-1.52.59-3.41,2.24-3.68,3.68-.84,4.37-1.36,8.89-1.3,13.34.08,5.81,3.49,8.62,9.25,7.34,4.48-.99,8.67-3.21,13.04-4.74,2.94-1.03,5.93-2.12,8.98-2.54,1.2-.16,3.08,1.19,3.81,2.37.49.8-.13,2.79-.88,3.76-7.29,9.42-17.61,12.25-28.78,12.08-9.44-.14-15.54-6.6-15.9-16.48-.22-5.93.7-11.89,1.13-18.18ZM295.01,589.67c10.86-2.07,20.51-9.89,20.75-17.08-9.37,2.64-15.43,8.72-20.75,17.08Z"/>
+                        <path class="cls-1" d="M819.37,566.42c3.5.91,7.23,1.33,10.44,2.85,6.68,3.17,8.81,11.47,4.33,17.36-1.08,1.41-4.37,1.51-6.63,1.45-.79-.02-2.16-2.3-2.19-3.57-.17-7.28-3.92-10.26-10.21-6.42-5.8,3.53-11.45,8.26-15.3,13.76-3.99,5.7-6.42,12.78-8.3,19.6-2.25,8.15,3.08,13.39,11.15,10.91,5.75-1.76,10.95-5.34,16.36-8.16,1.75-.91,3.38-2.73,5.13-2.81,1.79-.09,4.26,1.01,5.29,2.42.7.96.02,3.95-1.05,5.02-6.6,6.57-14.63,10.78-23.51,13.62-12.45,3.99-27.96-5.59-23.84-21.97,4.49-17.83,13.6-32.05,29.61-41.4,2.46-1.44,5.58-1.73,8.72-2.64Z"/>
+                        <path class="cls-1" d="M89.17,608.82c.26-15.23,9.6-27.56,23.97-30.94,2.29-.54,5.21.75,7.61,1.74,1.75.72,3.06,2.46,4.7,3.55,9.51,6.29,12.02,15.26,7.08,25.44-3.77,7.77-9.71,13.17-17.31,17.26-14.55,7.82-27.36-5.01-26.04-17.05ZM100.35,606.51c-.25,7.79,2.7,11.85,7.64,11.45,5.74-.46,14.4-8.43,16.18-14.89,1.31-4.74-1.33-8.97-7.99-13.59-2.63-1.82-4.8-1.75-7.2.12-5.81,4.54-7.74,10.94-8.63,16.91Z"/>
+                        <path class="cls-1" d="M870.1,608.76c.17-15.14,9.6-27.43,24.11-31.08,1.75-.44,4.24-.33,5.62.63,3.79,2.64,7.42,5.62,10.66,8.92,4.66,4.75,6.14,10.57,4.17,17.07-3.69,12.14-11.91,19.92-23.81,23.6-10.53,3.26-20.89-6.51-20.75-19.15ZM881.32,607.23c.11,7.17,3.03,11.11,7.37,10.81,5.9-.4,13.95-7.73,15.84-14.41,1.44-5.09-1.25-9.69-7.66-14.31-2.73-1.96-4.8-1.67-7.07.29-5.65,4.87-7.78,11.36-8.48,17.62Z"/>
+                    </g>
+                </svg>
+
+                <!-- REFLEJO EN ESPEJO CON COLOR #608080 -->
+                <svg class="hummus-glass-reflection" viewBox="0 0 915.52 655.51" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path class="cls-1" d="M453.26,0c58.78,49.54,116.82,98.45,175.36,147.79-2.76,2.39-4.85,4.2-7.45,6.45-6.66-5.6-13.64-11.46-20.59-17.34-48.08-40.65-96.18-81.27-144.16-122.03-3.08-2.62-4.8-1.39-7.13.53-27.73,22.92-55.51,45.78-83.24,68.7-26.71,22.07-53.37,44.19-80.06,66.27-1.01.84-2.1,1.58-3.36,2.53-1.9-1.81-3.68-3.51-6.37-6.06C335.28,97.88,394.01,49.15,453.26,0Z"/>
+                </svg>
+            </div>
+
+            <div class="brand-sub-tag">Hummusdeco • By Agus</div>
+
+            <!-- MANIFIESTO OFICIAL LITERAL DE LA TIENDA -->
+            <div class="brand-manifesto-capsule">
+                <p class="manifesto-quote-text">"Cada hogar es un proyecto único"</p>
+                <p class="manifesto-sub-desc">
+                    Nos especializamos en textiles y acompañamos a cada cliente con asesoramiento personal de principio a fin.
+                </p>
+            </div>
+
+            <!-- PILARES DEL TALLER (TEXTOS REALES DE SUS DESTACADAS) -->
+            <div class="studio-pillars-row">
+                <span class="pillar-chip">
+                    <svg class="pillar-svg" viewBox="0 0 24 24"><path d="M3 3v18h18M7 17l4-4M10 14l3-3M13 11l4-4M3 7h4M3 11h3M3 15h4M7 21v-4M11 21v-3M15 21v-4"/></svg>
+                    A Medida
+                </span>
+                <span class="pillar-chip">
+                    <svg class="pillar-svg" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                    Medición a domicilio
+                </span>
+                <span class="pillar-chip">
+                    <svg class="pillar-svg" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    Envíos a todo el país
+                </span>
+                <span class="pillar-chip">
+                    <svg class="pillar-svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    3 Cuotas sin interés
+                </span>
+            </div>
+        </header>
+
+        <!-- 3. ACCIÓN PRINCIPAL HERO: WHATSAPP ZONA NORTE Y PRESUPUESTO -->
+        <a href="https://wa.me/5491126282323?text=%C2%A1Hola%20Hummusdeco!%20%F0%9F%AA%9F%20Quisiera%20solicitar%20asesoramiento%20y%20presupuesto%20para%20un%20proyecto%20a%20medida." target="_blank" rel="noopener noreferrer" class="card-hero-custom-furniture" onclick="triggerHaptic()">
+            <div class="hero-custom-info">
+                <span class="hero-live-badge">Whatsapp Zona Norte</span>
+                <h2 class="hero-main-title">Textiles a tu Medida</h2>
+                <span class="hero-sub-detail">Consultá por WhatsApp directo al taller. Cortinas, fundas de sillón, respaldos y géneros según tu espacio.</span>
+            </div>
+            <div class="hero-action-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </div>
+        </a>
+
+        <!-- 4. BENTO GRID DE ACCESOS DIRECTOS -->
+        <section class="bento-actions-grid">
+
+            <!-- SITIO OFICIAL TIENDA ONLINE -->
+            <a href="https://www.hummusdeco.com/shoponline/" target="_blank" rel="noopener noreferrer" class="bento-card full-width" onclick="triggerHaptic()">
+                <div style="flex:1;">
+                    <div class="bento-top-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-wood);">25% OFF POR TRANSFERENCIA</span>
+                    </div>
+                    <div class="bento-title">Tienda Online Oficial</div>
+                    <div class="bento-caption">www.hummusdeco.com · Almohadones, mantas, cocina, baño y deco</div>
+                </div>
+                <span class="bento-arrow-hint">↗</span>
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://instagram.com/hummusdeco" target="_blank" rel="noopener noreferrer" class="bento-card" onclick="triggerHaptic()">
+                <div class="bento-top-row">
+                    <div class="bento-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <span class="bento-arrow-hint">↗</span>
+                </div>
+                <div>
+                    <div class="bento-title">@hummusdeco</div>
+                    <div class="bento-caption">Casos reales, showroom y videos de transformación</div>
+                </div>
+            </a>
+
+            <!-- PRODUCTOS A MEDIDA -->
+            <a href="https://www.hummusdeco.com/productos-personalizados/" target="_blank" rel="noopener noreferrer" class="bento-card" onclick="triggerHaptic()">
+                <div class="bento-top-row">
+                    <div class="bento-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 6v14M20 6v14M4 12h16"/></svg>
+                    </div>
+                    <span class="bento-arrow-hint">↗</span>
+                </div>
+                <div>
+                    <div class="bento-title">Productos a Medida</div>
+                    <div class="bento-caption">Fundas de sillones, pillows, cubresommier y respaldos</div>
+                </div>
+            </a>
+
+            <!-- CORTINAS TEXTILES & ROLLERS -->
+            <a href="https://www.hummusdeco.com/productos-personalizados/cortinas/" target="_blank" rel="noopener noreferrer" class="bento-card" onclick="triggerHaptic()">
+                <div class="bento-top-row">
+                    <div class="bento-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 4h18v3H3zM5 7v13M19 7v13M9 7v13M15 7v13"/></svg>
+                    </div>
+                    <span class="bento-arrow-hint">↗</span>
+                </div>
+                <div>
+                    <div class="bento-title">Cortinas &amp; Rollers</div>
+                    <div class="bento-caption">Sistemas con tela, rieles, madera, aluminio y rollers</div>
+                </div>
+            </a>
+
+            <!-- PROMOS & SALE -->
+            <a href="https://www.hummusdeco.com/sale/" target="_blank" rel="noopener noreferrer" class="bento-card" onclick="triggerHaptic()">
+                <div class="bento-top-row">
+                    <div class="bento-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    </div>
+                    <span class="bento-arrow-hint">↗</span>
+                </div>
+                <div>
+                    <div class="bento-title">Oportunidades Sale</div>
+                    <div class="bento-caption">Fundas en tusor liviano y promociones especiales</div>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- 5. SHOWCASE DE PRODUCTOS REALES TIENDANUBE -->
+        <section class="showcase-wrapper">
+            <div class="showcase-header">
+                <div>
+                    <h3 class="showcase-title-serif">Los Elegidos Para Vos</h3>
+                    <span style="font-size: 0.74rem; color: var(--color-text-muted); font-weight: 600;">Textiles y almohadones en stock</span>
+                </div>
+                <a href="https://www.hummusdeco.com/shoponline/cuarto/almohadones/" target="_blank" rel="noopener noreferrer" class="showcase-link-more">
+                    Ver todos →
+                </a>
+            </div>
+
+            <!-- Tira scroll horizontal -->
+            <div class="showcase-strip-scroll">
+
+                <!-- 1. ALMOHADÓN TULUM CAMEL -->
+                <a href="https://www.hummusdeco.com/productos/almohadon-tulum-camel/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">Tussor 50x50</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/96-db5b866c82cbf4d93217755754060020-1024-1024-b81084220cb44cc32417800706585201-480-0.webp" alt="Almohadón Tulum - Camel" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Almohadón Tulum - Camel</h4>
+                        <div class="decor-item-price">$47.900,00</div>
+                        <div class="decor-item-transfer">$35.925,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+                <!-- 2. ALMOHADÓN ESTAMPADO BEIGE -->
+                <a href="https://www.hummusdeco.com/productos/alm-estampado-beige/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">Gabardina</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/8-e0a8e341769d24785817827442811880-480-0.webp" alt="Almohadón estampado - Beige" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Almohadón estampado - Beige</h4>
+                        <div class="decor-item-price">$59.700,00</div>
+                        <div class="decor-item-transfer">$44.775,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+                <!-- 3. ALMOHADÓN AURA CAMEL -->
+                <a href="https://www.hummusdeco.com/productos/almohadon-aura-camel/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">Lino c/ faja</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/1800x2000-tienda-nube-1-7d28b6b0921424a9ed17803343854468-480-0.webp" alt="Almohadón Aura - Camel" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Almohadón Aura - Camel</h4>
+                        <div class="decor-item-price">$57.100,00</div>
+                        <div class="decor-item-transfer">$42.825,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+                <!-- 4. ALMOHADÓN VICHY -->
+                <a href="https://www.hummusdeco.com/productos/almohadon-vichy/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">Tussor Vichy</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/1-3f239a9d058459dad617749703765026-480-0.webp" alt="Almohadon Vichy" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Almohadon Vichy</h4>
+                        <div class="decor-item-price">$66.800,00</div>
+                        <div class="decor-item-transfer">$50.100,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+                <!-- 5. SET X3 REPASADORES NIDO -->
+                <a href="https://www.hummusdeco.com/productos/set-x3-repasadores-nido-ba6cg/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">100% Algodón</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/diseno-sin-titulo-4-a2c0d244115a1fc95717750655895772-480-0.webp" alt="Set x3 Repasadores Nido" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Set x3 Repasadores Nido</h4>
+                        <div class="decor-item-price">$35.100,00</div>
+                        <div class="decor-item-transfer">$26.325,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+                <!-- 6. MANTEL TOSCANA -->
+                <a href="https://www.hummusdeco.com/productos/mantel-toscana-vdwrf/" target="_blank" rel="noopener noreferrer" class="product-decor-card" onclick="triggerHaptic()">
+                    <div class="decor-img-container">
+                        <span class="decor-tag-badge">Tussor Prelavado</span>
+                        <img src="https://dcdn-us.mitiendanube.com/stores/001/334/823/products/79-421f0b5e8b67cd54a717750644319078-480-0.webp" alt="Mantel Toscana" loading="lazy">
+                    </div>
+                    <div class="decor-meta-block">
+                        <h4 class="decor-item-title">Mantel Toscana</h4>
+                        <div class="decor-item-price">$68.400,00</div>
+                        <div class="decor-item-transfer">$51.300,00 <span>c/ transf.</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 6. SHOWROOM & UBICACIÓN EXACTA (BUENAVISTA - VICTORIA) -->
+        <article class="atelier-map-card">
+            <div class="atelier-map-header">
+                <div class="atelier-title-wrap">
+                    <div class="atelier-pin-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="atelier-header-texts">
+                        <span class="atelier-name">Open Showroom</span>
+                        <span class="atelier-address-sub">Santa Catalina 3231, Buenavista (Victoria, Buenos Aires)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAPA CENTRADO EN LA DIRECCIÓN OFICIAL -->
+            <div class="atelier-map-frame">
+                <iframe 
+                    title="Ubicación Hummus home&amp;deco en Google Maps"
+                    src="https://maps.google.com/maps?q=Santa+Catalina+3231,+Victoria,+Provincia+de+Buenos+Aires,+Argentina&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                    loading="lazy" 
+                    allowfullscreen="" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <a href="https://maps.google.com/?q=Santa+Catalina+3231,+Victoria,+Provincia+de+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="atelier-open-directions" onclick="triggerHaptic()">
+                <span>Ver ubicación en Google Maps (Lunes a Viernes)</span>
+                <span>Abrir App ↗</span>
+            </a>
+        </article>
+
+        <!-- 7. CANALES DE CONTACTO DIRECTO -->
+        <nav class="social-network-bar" aria-label="Canales de Contacto Directo">
+            <!-- Instagram -->
+            <a href="https://instagram.com/hummusdeco" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Instagram Hummusdeco">
+                <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/5491126282323" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="WhatsApp Hummusdeco">
+                <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            </a>
+            <!-- Teléfono -->
+            <a href="tel:1126282323" class="social-pill-btn" aria-label="Llamar a Hummusdeco">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:hummusdeco@gmail.com" class="social-pill-btn" aria-label="Enviar Email a Hummusdeco">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+        </nav>
+
+        <!-- 8. FOOTER EDITORIAL Y LEGAL -->
+        <footer class="hub-colophon">
+            <div class="colophon-signature">Hummus home &amp; deco</div>
+            <p class="colophon-atelier-text">
+                Showroom en Zona Norte: Santa Catalina 3231, Buenavista (Victoria, Buenos Aires).
+                Cortinas, fundas y todo tipo de textiles a medida.
+            </p>
+            <div class="colophon-links-legal">
+                <span>Defensa del Consumidor:</span>
+                <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener noreferrer">Reclamos</a>
+                <span>/</span>
+                <a href="https://www.hummusdeco.com/contacto/?order_cancellation_without_id=true" target="_blank" rel="noopener noreferrer">Botón de Arrepentimiento</a>
+            </div>
+            <p class="colophon-copy">© 2026 HUMMUS HOME &amp; DECO · TODOS LOS DERECHOS RESERVADOS</p>
+        </footer>
+
+    </main>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP DIRECTO -->
+    <a href="https://wa.me/5491126282323" class="floating-whatsapp-wrap" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp con Hummusdeco" onclick="triggerHaptic()">
+        <span class="floating-whatsapp-pill-label">WhatsApp</span>
+        <div class="floating-whatsapp-btn">
+            <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </div>
+    </a>
+
+    <!-- SCRIPTS INTERACTIVOS -->
+    <script>
+        function setDecorAmbience(paletteName, displayName) {
+            triggerHaptic();
+            document.body.setAttribute('data-palette', paletteName);
+
+            const labelEl = document.getElementById('ambienceActiveLabel');
+            if (labelEl) {
+                labelEl.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:13px;height:13px;stroke-width:2.2;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    ${displayName}
+                `;
+            }
+
+            document.querySelectorAll('.ambience-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-target') === paletteName);
+            });
+
+            try {
+                localStorage.setItem('hummus_ambience_pref', paletteName);
+                localStorage.setItem('hummus_ambience_name', displayName);
+            } catch(e) {}
+        }
+
+        function triggerHaptic() {
+            if ('vibrate' in navigator) {
+                try { navigator.vibrate(8); } catch(e) {}
+            }
+        }
+
+        // Efecto magnético sutil
+        document.querySelectorAll('.card-hero-custom-furniture, .bento-card, .product-decor-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                card.style.transform = `translate(${x * 0.02}px, ${y * 0.02 - 2}px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const savedAmbience = localStorage.getItem('hummus_ambience_pref');
+                const savedName = localStorage.getItem('hummus_ambience_name');
+                if (savedAmbience && savedName) {
+                    setDecorAmbience(savedAmbience, savedName);
+                }
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>
